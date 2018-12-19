@@ -1,0 +1,92 @@
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Nueva partida</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	</head>
+
+    <body class="panel">
+
+		<form id="newGameForm" action="gestordedatos.php" method="POST" class="validateThis">
+
+			<fieldset>
+
+				<legend>Registrar nueva partida</legend>
+
+				<p>Indica aquí los detalles que serán asociados a tu cuenta</p>
+				<br>
+
+				<label>Nombre de usuario
+					<input class="js-validation" data-validations="required lenght noSpace" data-val-lenght="6" data-val-lenght="6" type="text" id="userName">
+				</label>
+				<br><br>
+
+				<label>Contraseña
+					<input class="js-validation" data-validations="required lenght hasUppercase hasLowercase hasNumber equalField" data-val-lenght="6" type="password" id="userPassword1">
+				</label>
+				<br><br>
+
+				<label>Repite la contraseña
+					<input class="js-validation" data-validations="required equalField" type="password" id="userPassword2">
+				</label>
+				<br><br>
+
+				<label>Email
+					<input class="js-validation" data-validations="required hasDot hasArroba" type="text" id="userEmail">
+				</label>
+				<br><br>
+
+				<label>DNI
+					<input class="js-validation" data-validations="required id" type="text" id="userID">
+				</label>
+				<br><br>
+
+				<label>Fecha de nacimiento
+					<input class="js-validation" data-validations="required"  id="userDate" type="date">
+				</label>
+				<br><br>
+
+				País de residencia
+					<label><input class="js-validation" data-validations="required" type="radio" name="userCountry" value="ES">España</label>
+					<label><input class="js-validation" data-validations="required" type="radio" name="userCountry" value="MX">Mexico</label>
+					<label><input class="js-validation" data-validations="required" type="radio" name="userCountry" value="AR">Argentina</label>
+					<label><input class="js-validation" data-validations="required" type="radio" name="userCountry" value="XX">Otro</label>
+				<br>
+
+				<label>Forma de pago preferente
+					<select id="paymentMethod" class="js-validation" data-validations="required">
+						<option>Seleccionar</option>
+						<option>Paypal</option>
+						<option>Tarjeta de crédito</option>
+						<option>Tarjeta de débito</option>
+					</select>
+				</label>
+				<br><br>
+
+				<small>
+					<input class="js-validation" data-validations="required" type="checkbox" id="acceptsConditions" class="js-validation" data-validations="required"> Acepto las condiciones del servicio
+				</small>
+				<br><br>
+
+			</fieldset>
+
+
+			<button id="sendForm" data-validate="parent">COMENZAR PARTIDA</button>
+
+		</form>
+
+		<ul id="errores"></ul>
+
+		<ul id="alerta">
+
+		</ul>
+
+		<script src="../js/utils.js"></script>
+		<script src="../js/comun.js"></script>
+		<script src="../js/nuevaPartida.js"></script>
+		<script src="../js/validations.js"></script>
+
+	</body>
+</html>
